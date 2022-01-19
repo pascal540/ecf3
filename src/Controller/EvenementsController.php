@@ -2,20 +2,27 @@
 
 namespace App\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Repository\EvenementRepository;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class EvenementsController extends AbstractController
 {
     /**
      * @Route("/evenements", name="evenements")
      */
-    public function evenements(): Response
+    public function actualites(EvenementRepository $repo): Response
+
     {
-        return $this->render('evenements/evenements.html.twig', [
-            'controller_name' => 'EvenementsController',
-            'title' => "Evenements"
+        $evenements = $repo->findAll();
+        // var_dump($actualites);
+        // die();
+        return $this->render('actualites/actualites.html.twig', [
+            'controller_name' => 'ActualitesController',
+            'actualites' => $evenements,
+            'i' => 0
+
         ]);
     }
 }
