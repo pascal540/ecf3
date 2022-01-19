@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+{% form_theme form 'bootstrap_5_layout.html.twig' %}
+{% block body %}
+
+<div class="container mt-5 w-50 bg-light">
+    <div class="row custom-line-contact">
+        {{ form_start(form) }} {{form_row(form.nom,{'attr':{'placeholder':'Votre nom'}})}}
+        {{form_row(form.prenom,{'attr':{'placeholder':'Votre prenom'}})}}
+        {{form_row(form.telephone,{'attr':{'placeholder':'Votre Telephone'}})}}
+        {{form_row(form.email,{'attr':{'placeholder':'Votre email'}})}}
+        {{form_row(form.content,{'attr' :{'placeholder':'Votre message'}})}} <button type="submit"
+            class="btn btn-success">Soumettre votre demande</button>
+        </button>
+        {{ form_end(form) }}
+    </div>
+    {% endblock %}
