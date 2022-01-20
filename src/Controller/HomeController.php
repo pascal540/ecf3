@@ -8,13 +8,14 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class HomeController extends AbstractController
 {
-    
+
 
     /**
      * @Route("/", name="home")
      */
     public function index(): Response
     {
+        // $evenements = $repo->findBy([], array('createdAt' => 'desc'));
         return $this->render('home/index.html.twig', [
             'controller_name' => 'HomeController',
         ]);

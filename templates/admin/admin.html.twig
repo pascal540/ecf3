@@ -1,32 +1,34 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello AdminController!{% endblock %}
+{% block title %}Administration{% endblock %}
 {% block body %}
-<div class="container">
+<div class="container ">
+    <div class="col-12">
 
-    {# images centrales #}
-    <div class="row mt-5">
-        <div class="col-sm-6">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Special title treatment</h5>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <img src="https://via.placeholder.com/250">
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+        <div class="row  ">
+
+            {% set i = i + 1 %}
+
+            <div class="row mt-5">
+                {% for evenement  in evenements %}
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title"> {{ evenement.title}} {{ evenement.createdAt | date('d/m/y')}} à
+                                {{ evenement.createdAt | date('H:i')}}</h5>
+                            <img src="{{ evenement.file}}" alt="">
+                            <p class="card-text">{{ evenement.content}}
+                            </p>
+
+                            <a href="#" class="btn btn-primary">Modifier</a>
+                        </div>
+                    </div>
                 </div>
+                {% endfor %}
             </div>
         </div>
-        <div class="col-sm-6">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Special title treatment</h5>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <img src="https://via.placeholder.com/250">
 
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-        </div>
     </div>
+</div>
 </div>
 {% endblock %}

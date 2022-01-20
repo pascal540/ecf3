@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Actualites de notre village
+{% block title %}Evenements dans notre village
 {% endblock %}
 
 {% block body %}
@@ -18,19 +18,19 @@
                 <h2 class="accordion-header" id="headingOne">
                     <button class="accordion-button" type="button" data-bs-toggle="collapse"
                         data-bs-target="#collapse{{i}}" aria-expanded="true" aria-controls="collapseOne">
-                        {{ actualite.title}} {{ actualite.createdAt | date('d/m/y')}} à
-                        {{ actualite.createdAt | date('H:i')}}
+                        {{ evenement.title}} {{ evenement.createdAt | date('d/m/y')}} à
+                        {{ evenement.createdAt | date('H:i')}}
                     </button>
                 </h2>
                 <div id="collapse{{i}}" class="accordion-collapse collapse show" aria-labelledby="headingOne"
                     data-bs-parent="#accordionExample">
                     <div class="accordion-body">
-                        <strong>{{ actualite.title}}.</strong>
-                        {{ actualite.content}}
-                        <div class="metadata">Ecrit le {{ actualite.createdAt | date('d/m/y')}} à
-                            {{ actualite.createdAt | date('H:i')}}
+                        <strong>{{ evenement.title}}.</strong>
+                        {{ evenement.content}}
+                        <div class="metadata">Ecrit le {{ evenement.createdAt | date('d/m/y')}} à
+                            {{ evenement.createdAt | date('H:i')}}
                         </div>
-                        <img src="{{ actualite.file}}" alt="">
+                        <img src="{{ evenement.file}}" alt="">
                     </div>
                 </div>
             </div>

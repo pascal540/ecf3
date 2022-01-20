@@ -12,15 +12,14 @@ class EvenementsController extends AbstractController
     /**
      * @Route("/evenements", name="evenements")
      */
-    public function actualites(EvenementRepository $repo): Response
+    public function evenements(EvenementRepository $repo): Response
 
     {
         $evenements = $repo->findAll();
-        // var_dump($actualites);
-        // die();
-        return $this->render('actualites/actualites.html.twig', [
-            'controller_name' => 'ActualitesController',
-            'actualites' => $evenements,
+
+        return $this->render('evenements/evenements.html.twig', [
+            'controller_name' => 'EvenementsController',
+            'evenements' => $evenements,
             'i' => 0
 
         ]);
