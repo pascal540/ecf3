@@ -2,35 +2,33 @@
 
 {% block title %}Administration{% endblock %}
 {% block body %}
-{% form_theme form 'bootstrap_5_layout.html.twig'  %}
-{% form_theme form2 'bootstrap_5_layout.html.twig'  %}
-<div class="container   w-75 bg-light">
+{% form_theme formEvent 'bootstrap_5_layout.html.twig'  %}
+{% form_theme formActue 'bootstrap_5_layout.html.twig'  %}
+<div class="container w-75 bg-light">
     <div class="row custom-line-contact">
         <div class="container text-center col-6">
-            {{ form_start(form) }}
+            {{ form_start(formEvent) }}
 
-            {{form_row(form.title,{'attr':{'placeholder':'Titre de l\'evenement'}})}}
-            {{form_row(form.content,{'attr':{'placeholder':'Contenu à entrer '}})}}
-            {{form_row(form.file,{'attr':{'placeholder':'image à Uploader'}})}}
+            {{form_row(formEvent.title,{'attr':{'placeholder':'Titre de l\'evenement'}})}}
+            {{form_row(formEvent.content,{'attr':{'placeholder':'Contenu à entrer '}})}}
+            {{form_row(formEvent.file,{'attr':{'placeholder':'image à Uploader'}})}}
 
 
             <button type="submit" class="btn btn-success">Ajouter</button>
             </button>
 
-            {{ form_end(form) }}
+            {{ form_end(formEvent) }}
         </div>
         <div class="container text-center col-6">
-            {{ form_start(form2) }}
-
-            {{form_row(form2.title,{'attr':{'placeholder':'Titre de l\'actualité'}})}}
-            {{form_row(form2.content,{'attr':{'placeholder':'Contenu à entrer '}})}}
-            {{form_row(form2.file,{'attr':{'placeholder':'image à Uploader'}})}}
-
+            {{ form_start(formActue) }}
+            {{form_row(formActue.title,{'attr':{'placeholder':'Titre de l\'actualité'}})}}
+            {{form_row(formActue.content,{'attr':{'placeholder':'Contenu à entrer '}})}}
+            {{form_row(formActue.file,{'attr':{'placeholder':'image à Uploader'}})}}
 
             <button type="submit" class="btn btn-success">Ajouter</button>
             </button>
 
-            {{ form_end(form2) }}
+            {{ form_end(formActue) }}
         </div>
     </div>
 </div>

@@ -66,8 +66,8 @@ class AdminController extends AbstractController
 
         return $this->render('admin/admin.html.twig', [
             'controller_name' => 'AdminController',
-            'form' => $form->createView(),
-            'form2' => $form->createView()
+            'formEvent' => $form->createView(),
+            'formActue' => $form->createView()
 
         ]);
     }
