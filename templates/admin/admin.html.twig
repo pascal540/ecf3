@@ -2,33 +2,37 @@
 
 {% block title %}Administration{% endblock %}
 {% block body %}
-<div class="container ">
-    <div class="col-12">
+{% form_theme form 'bootstrap_5_layout.html.twig'  %}
+{% form_theme form2 'bootstrap_5_layout.html.twig'  %}
+<div class="container   w-75 bg-light">
+    <div class="row custom-line-contact">
+        <div class="container text-center col-6">
+            {{ form_start(form) }}
 
-        <div class="row  ">
+            {{form_row(form.title,{'attr':{'placeholder':'Titre de l\'evenement'}})}}
+            {{form_row(form.content,{'attr':{'placeholder':'Contenu à entrer '}})}}
+            {{form_row(form.file,{'attr':{'placeholder':'image à Uploader'}})}}
 
-            {% set i = i + 1 %}
 
-            <div class="row mt-5">
-                {% for evenement  in evenements %}
-                <div class="col-sm-6">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title"> {{ evenement.title}} {{ evenement.createdAt | date('d/m/y')}} à
-                                {{ evenement.createdAt | date('H:i')}}</h5>
-                            <img src="{{ evenement.file}}" alt="">
-                            <p class="card-text">{{ evenement.content}}
-                            </p>
+            <button type="submit" class="btn btn-success">Ajouter</button>
+            </button>
 
-                            <a href="#" class="btn btn-primary">Modifier</a>
-                        </div>
-                    </div>
-                </div>
-                {% endfor %}
-            </div>
+            {{ form_end(form) }}
         </div>
+        <div class="container text-center col-6">
+            {{ form_start(form2) }}
 
+            {{form_row(form2.title,{'attr':{'placeholder':'Titre de l\'actualité'}})}}
+            {{form_row(form2.content,{'attr':{'placeholder':'Contenu à entrer '}})}}
+            {{form_row(form2.file,{'attr':{'placeholder':'image à Uploader'}})}}
+
+
+            <button type="submit" class="btn btn-success">Ajouter</button>
+            </button>
+
+            {{ form_end(form2) }}
+        </div>
     </div>
 </div>
-</div>
+
 {% endblock %}
