@@ -4,7 +4,7 @@ namespace App\Controller;
 
 
 use App\Entity\Contact;
-use App\Form\InscriptionType;
+use App\Form\ContactType;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -24,7 +24,7 @@ class ContactController extends AbstractController
 
         $contact = new Contact();
 
-        $form = $this->createForm(InscriptionType::class, $contact);
+        $form = $this->createForm(ContactType::class, $contact);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -43,7 +43,7 @@ class ContactController extends AbstractController
         }
 
 
-        return $this->render('home/contact.html.twig', [
+        return $this->render('contact/contact.html.twig', [
             'form' => $form->createView()
 
         ]);
