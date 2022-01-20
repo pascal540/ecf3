@@ -19,7 +19,8 @@ class ActualitesController extends AbstractController
     public function actualites(ActualitesRepository $repo): Response
 
     {
-        $actualites = $repo->findAll();
+
+        $actualites = $repo->findBy([], array('createdAt' => 'DESC'));
         // var_dump($actualites);
         // die();
         return $this->render('actualites/actualites.html.twig', [

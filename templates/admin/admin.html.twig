@@ -1,17 +1,23 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Administration{% endblock %}
+{% block title %}Administration
+{% endblock %}
 {% block body %}
-{% form_theme formEvent 'bootstrap_5_layout.html.twig'  %}
-{% form_theme formActue 'bootstrap_5_layout.html.twig'  %}
-<div class="container w-75 bg-light">
-    <div class="row custom-line-contact">
-        <div class="container text-center col-6">
-            {{ form_start(formEvent) }}
+	{% form_theme formEvent 'bootstrap_5_layout.html.twig'  %}
+	{% form_theme formActue 'bootstrap_5_layout.html.twig'  %}
+	<div class="container w-75 bg-light">
+		<div class="row custom-line-contact">
+			<div class="container text-center col-6">
+				{{ form_start(formEvent) }}
 
-            {{form_row(formEvent.title,{'attr':{'placeholder':'Titre de l\'evenement'}})}}
+				{{form_row(formEvent.title,{'attr':{'placeholder':'Titre de l\'evenement'}})}}
             {{form_row(formEvent.content,{'attr':{'placeholder':'Contenu à entrer '}})}}
             {{form_row(formEvent.file,{'attr':{'placeholder':'image à Uploader'}})}}
+            {% if app.user %}
+	        <li class="nav-item">
+		    <a class="nav-link text-info" href="{{ path('app_logout')}}">Déconnexion</a>
+	        </li>
+    {% endif %}
 
 
             <button type="submit" class="btn btn-success">Ajouter</button>
@@ -22,15 +28,13 @@
         <div class="container text-center col-6">
             {{ form_start(formActue) }}
             {{form_row(formActue.title,{'attr':{'placeholder':'Titre de l\'actualité'}})}}
-            {{form_row(formActue.content,{'attr':{'placeholder':'Contenu à entrer '}})}}
-            {{form_row(formActue.file,{'attr':{'placeholder':'image à Uploader'}})}}
+				{{form_row(formActue.content,{'attr':{'placeholder':'Contenu à entrer '}})}}
+				{{form_row(formActue.file,{'attr':{'placeholder':'image à Uploader'}})}}
 
-            <button type="submit" class="btn btn-success">Ajouter</button>
-            </button>
+				<button type="submit" class="btn btn-success">Ajouter</button>
+			</button>
 
-            {{ form_end(formActue) }}
-        </div>
-    </div>
-</div>
-
-{% endblock %}
+			{{ form_end(formActue) }}
+		</div>
+	</div>
+</div>{% endblock %}

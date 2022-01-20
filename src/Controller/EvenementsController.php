@@ -15,8 +15,8 @@ class EvenementsController extends AbstractController
     public function evenements(EvenementRepository $repo): Response
 
     {
-        $evenements = $repo->findAll();
-
+        //$evenements = $repo->findAll();
+        $evenements = $repo->findBy([], array('createdAt' => 'DESC'));
         return $this->render('evenements/evenements.html.twig', [
             'controller_name' => 'EvenementsController',
             'evenements' => $evenements,
