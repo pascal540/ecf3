@@ -31,6 +31,12 @@
                             {{ evenement.createdAt | date('H:i')}}
                         </div>
                         <img src="{{ evenement.file}}" alt="">
+                        {% if app.user %}
+                        <div class="container ">
+                            <a href="{{ path('event_modifie', {'id': evenement.id}) }}"
+                                class="btn btn-success mt-2">Modifier l' évènement</a>
+                        </div>
+                        {% endif %}
                     </div>
                 </div>
             </div>
