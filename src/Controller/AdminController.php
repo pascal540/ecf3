@@ -75,7 +75,7 @@ class AdminController extends AbstractController
     /**
      * @Route("/modification/{id}", name="actue_modifie")
      */
-    public function modifie(
+    public function modifieActualite(
         Request $request,
         EntityManagerInterface $manager,
         ActualitesRepository $repo,
@@ -96,7 +96,7 @@ class AdminController extends AbstractController
             );
         }
 
-        return $this->render('admin/modifie.html.twig', [
+        return $this->render('admin/modifieActualie.html.twig', [
             'controller_name' => 'AdminController',
             'actualite' => $actualites,
             'formActue' => $formActue->createView()
@@ -129,7 +129,7 @@ class AdminController extends AbstractController
             );
         }
 
-        return $this->render('admin/evenement.html.twig', [
+        return $this->render('admin/modifieEvenements.html.twig', [
             'controller_name' => 'AdminController',
             'evenement' => $evenements,
             'formEvenement' => $formEvenement->createView()
