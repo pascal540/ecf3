@@ -8,27 +8,35 @@ Pour plus d'informations, les internautes pourront envoyer un message à la mair
 
 Le secrétaire de mairie doit être en mesure d'ajouter, modifier ou supprimer des événements / actualités. Le secrétaire sera seul en mesure d'effectuer ces modifications.
 
-## Objectif 
+## Objectif
 
 - On voudra afficher la météo du jour sur la page d'accueil (API)
 
-- Pages : 
-    - Accueil avec les évènements / actualité à venir
-    - Afficher les évènements (comporteront au moins une photo)
-    - Afficher les actualités (comporteront au moins une photo)
-    - Histoire
-    - Contact (localisation du village / formulaire contact avec sécurisation Captcha)
+- Pages :
+
+  - Accueil avec les évènements / actualité à venir
+  - Afficher les évènements (comporteront au moins une photo)
+  - Afficher les actualités (comporteront au moins une photo)
+  - Histoire
+  - Contact (localisation du village / formulaire contact avec sécurisation Captcha)
 
 - Admin :
-    - Login 
-    - Liste des événements / actualités
-    - Modification 
-    - Ajout 
-    - Suppression
 
-- Plus : 
-    - Upload photos depuis l'ordi
-    - Implémenter une recherche par mots clés
-    - RDV à la mairie et remplir un agenda (en plus)
-    - Sécuriser envoi d'un formulaire avec un Captcha (en plus)
+  - Login
+  - Liste des événements / actualités
+  - Modification
+  - Ajout
+  - Suppression
 
+- Plus :
+  - Upload photos depuis l'ordi
+  - Implémenter une recherche par mots clés
+  - RDV à la mairie et remplir un agenda (en plus)
+  - Sécuriser envoi d'un formulaire avec un Captcha (en plus)
+
+21/01 :Reste a faire
+
+- suppression actualites et evenements + partie admin
+- meteo
+- ameliorer accueil
+- ameliorer histoire
