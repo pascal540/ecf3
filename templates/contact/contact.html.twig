@@ -21,16 +21,20 @@
         {{form_row(form.nom,{'attr':{'placeholder':'Votre nom'},
         })}}
 
-
         {{form_row(form.prenom,{'attr':{'placeholder':'Votre prenom'}})}}
         {{form_row(form.telephone,{'attr':{'placeholder':'Votre Telephone'}})}}
         {{form_row(form.email,{'attr':{'placeholder':'Votre email'}})}}
         {{form_row(form.content,{'attr' :{'placeholder':'Votre message'}})}}
+        {{form_row(form.captchaCode)}}
+
         <div class="container w-50">
             <button type="submit" class="btn btn-success">Soumettre votre demande</button>
             </button>
         </div>
         {{ form_end(form) }}
+
     </div>
+
+
 </div>
 {% endblock %}

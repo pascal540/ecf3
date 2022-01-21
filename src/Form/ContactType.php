@@ -4,12 +4,13 @@ namespace App\Form;
 
 use App\Entity\Contact;
 
-
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Captcha\Bundle\CaptchaBundle\Form\Type\CaptchaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Captcha\Bundle\CaptchaBundle\Validator\Constraints\ValidCaptcha;
 
 class ContactType extends AbstractType
 {
@@ -30,6 +31,14 @@ class ContactType extends AbstractType
             ])
             ->add('content', TextareaType::class, [
                 'attr' => ['class' => "textareaContact"]
+            ])
+            ->add('captchaCode', CaptchaType::class, [
+                'captchaConfig' => 'ExampleCaptcha',
+                'constraints' => [
+                    new ValidCaptcha([
+                        'message' => 'Invalid captcha, please try again',
+                    ]),
+                ]
             ]);
     }
 

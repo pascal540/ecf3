@@ -9,9 +9,7 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * @ORM\Entity(repositoryClass=ContactRepository::class)
- *  @UniqueEntity(
- *  fields={"email"},
- *  message = "L'email que vous indiqué est deja utilisé ! ")
+ *  
  */
 class Contact
 {
@@ -55,6 +53,18 @@ class Contact
      * @Assert\Email()
      */
     private $email;
+
+    protected $captchaCode;
+
+    public function getCaptchaCode()
+    {
+        return $this->captchaCode;
+    }
+
+    public function setCaptchaCode($captchaCode)
+    {
+        $this->captchaCode = $captchaCode;
+    }
 
     public function getId(): ?int
     {
