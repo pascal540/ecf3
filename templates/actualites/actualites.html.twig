@@ -44,10 +44,10 @@
 								<img src="{{ actualite.file}}" alt="">
 							</div>
 							{% if app.user %}
-								<div class="container ">
-									<a href="{{ path('actue_modifiee', {'id': actualite.id}) }}" class="btn btn-success mt-2">Modifier l'actualité</a>
-									<a href="{{ path('delete_actu', {'id': actualite.id}) }}" class="btn btn-success mt-2">Supprimer l'actualité</a>
-
+								<div class="container  w-100 justify-content-center">
+									<a href="{{ path('actue_modifiee', {'id': actualite.id}) }}" class="btn btn-primary    mt-3  mx-5     ">Modifier l'actualité
+									</a>
+									<a href="{{ path('delete_actu', {'id': actualite.id}) }}" class="btn btn-danger     mt-3   ">Supprimer l'actualité</a>
 								</div>
 
 							{% endif %}

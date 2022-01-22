@@ -34,9 +34,10 @@
 								</div>
 								<img src="{{ evenement.file}}" alt="">
 								{% if app.user %}
-									<div class="container ">
-										<a href="{{ path('event_modifie', {'id': evenement.id}) }}" class="btn btn-success mt-2">Modifier l' évènement</a>
-										<a href="{{ path('delete_event', {'id': evenement.id}) }}" class="btn btn-success mt-2">Supprimer évènement</a>
+									<div class="container  ">
+
+										<a href="{{ path('event_modifie', {'id': evenement.id}) }}" class="btn btn-success mt-3  mx-5">Modifier l' évènement</a>
+										<a href="{{ path('delete_event', {'id': evenement.id}) }}" class="btn btn-danger mt-3   ">Supprimer évènement</a>
 
 									</div>
 								{% endif %}
