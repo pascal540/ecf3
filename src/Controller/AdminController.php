@@ -18,6 +18,9 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class AdminController extends AbstractController
 {
+
+
+
     /**
      * @Route("/admin", name="admin")
      */
@@ -73,7 +76,7 @@ class AdminController extends AbstractController
     }
 
     /**
-     * @Route("/modification/{id}", name="actue_modifie")
+     * @Route("/modification/{id}", name="actue_modifiee")
      */
     public function modifieActualite(
         Request $request,
@@ -135,5 +138,50 @@ class AdminController extends AbstractController
             'formEvenement' => $formEvenement->createView()
 
         ]);
+    }
+
+
+    /**
+     * @Route("/deleteActu/{id}", name="delete_actu")
+     */
+    public function supprimeActualite(
+        Actualites $actualite,
+        ActualitesRepository $repo,
+        EntityManagerInterface $manager
+
+    ): Response {
+
+        $actues = $repo->findBy([], array(), $actualite->getId());
+
+        $manager->remove($actualite);
+
+        $manager->flush();
+
+        $this->addFlash('info', 'Actualite supprimée avec succes');
+        return $this->redirectToRoute(
+            'actualites',
+        );
+    }
+
+    /**
+     * @Route("/deleteEvent/{id}", name="delete_event")
+     */
+    public function supprimeEvent(
+        Evenement $evenement,
+        EvenementRepository $repo,
+        EntityManagerInterface $manager
+
+    ): Response {
+
+        $events = $repo->findBy([], array(), $evenement->getId());
+
+        $manager->remove($evenement);
+
+        $manager->flush();
+
+        $this->addFlash('info', 'Evenement supprimé avec succes');
+        return $this->redirectToRoute(
+            'evenements',
+        );
     }
 }
