@@ -34,9 +34,4 @@ Le secrétaire de mairie doit être en mesure d'ajouter, modifier ou supprimer d
   - RDV à la mairie et remplir un agenda (en plus)
   - Sécuriser envoi d'un formulaire avec un Captcha (en plus)
 
-21/01 :Reste a faire
 
-- suppression actualites et evenements + partie admin
-- meteo
-- ameliorer accueil
-- ameliorer histoire
