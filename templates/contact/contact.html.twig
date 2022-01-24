@@ -16,21 +16,34 @@
 </style>
 <div class="container    w-50 bg-light">
     <div class="row custom-line-contact">
-        {{ form_start(form) }}
+        <div class="row">
+            <div class="col-6">
+                {{ form_start(form) }}
 
-        {{form_row(form.nom,{'attr':{'placeholder':'Votre nom'},
+                {{form_row(form.nom,{'attr':{'placeholder':'Votre nom'},
         })}}
 
-        {{form_row(form.prenom,{'attr':{'placeholder':'Votre prenom'}})}}
-        {{form_row(form.telephone,{'attr':{'placeholder':'Votre Telephone'}})}}
-        {{form_row(form.email,{'attr':{'placeholder':'Votre email'}})}}
-        {{form_row(form.content,{'attr' :{'placeholder':'Votre message'}})}}
-        {{form_row(form.captchaCode)}}
+                {{form_row(form.prenom,{'attr':{'placeholder':'Votre prenom'}})}}
+                {{form_row(form.telephone,{'attr':{'placeholder':'Votre Telephone'}})}}
+                {{form_row(form.email,{'attr':{'placeholder':'Votre email'}})}}
+                {{form_row(form.content,{'attr' :{'placeholder':'Votre message'}})}}
 
-        <div class="container w-50">
-            <button type="submit" class="btn btn-success">Soumettre votre demande</button>
-            </button>
+
+                {{form_row(form.captchaCode)}}
+
+                <div class="container w-50">
+                    <button type="submit" class="btn btn-success">Soumettre votre demande</button>
+                    </button>
+                </div>
+            </div>
+            <div class="col-6 text-center">
+                <h4>Localisation</h4>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d21062.371036109605!2d6.125700834491379!3d48.70937274256358!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4794a2b2ed613bd9%3A0xbfcf2b2c3c4ac371!2sMax%C3%A9ville!5e0!3m2!1sfr!2sfr!4v1643027176747!5m2!1sfr!2sfr"
+                    width="400" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
         </div>
+
         {{ form_end(form) }}
 
     </div>
