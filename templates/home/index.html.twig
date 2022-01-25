@@ -5,45 +5,87 @@
 
 {% block body %}
 
-	{% set i=i+1 %}
-	<div class="container w-100 mt-5">
-		<div class="row col-6 ">
-
+{# {% set i=i+1 %}
+{% set j=j+1 %} #}
+<div class="container w-100 mt-5">
+	<div class="row col-12 ">
+		<div class="container col-6">
+			<p>
+				<h1 class="text-center">Les derniers évènements</h1>
+			</p>
 			<div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
 
-				<div
-					class="carousel-inner  ">
-					{# {% for evenement  in evene3ments %} #}
-					<div class="carousel-item {% if i == 1 %} active {% endif %} " data-bs-interval="1000">
-						<img src="..\images\photo1.png" class="d-block w-100 h-50 fluid">
+				<div class="carousel-inner  ">
+					{% for evenement  in evenements %}
+					<div class="carousel-item {% if i == 1 %} active {% endif %} " data-bs-interval="3000">
+						<div class="card">
+							<img src="{{ evenement.file}}" class=" img-fluid d-block ">
+							<div class="card-body">
+								<h5 class="card-title">{{ evenement.title}}</h5>
+								<p class="card-text">{{ evenement.content}}</p>
 
+							</div>
+						</div>
 					</div>
-					<div class="carousel-item " data-bs-interval="1000">
-						<img
-						src="..\images\photo2.png" class="d-block w-100 h-50 fluid">
-					{# {% endfor %} #}
-					</div>
-
-					<div class="carousel-item " data-bs-interval="1000">
-						<img
-						src="..\images\photo3.png" class="d-block w-100 h-50 fluid">
-					{# {% endfor %} #}
-					</div>
-
+					{% set i=i+1 %}
+					{% endfor %}
 				</div>
+			</div>
+			{# ACTUALITES #}
 
-				<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide="prev">
+
+			<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleSlidesOnly"
+				data-bs-slide="prev">
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Previous</span>
+			</button>
+
+			<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleSlidesOnly"
+				data-bs-slide="next">
+				<span class="carousel-control-next-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Next</span>
+			</button>
+		</div>
+
+		{# ACTUALITES #}
+		<div class="container col-6 ">
+			<p>
+				<h1 class="text-center">Les dernières actualités</h1>
+			</p>
+			<div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+
+				<div class="carousel-inner  ">
+					{% for actu  in actualites %}
+					<div class="carousel-item {% if j == 1 %} active {% endif %} " data-bs-interval="3000">
+						<div class="card">
+							<img src="{{ actu.file}}" class=" img-fluid d-block ">
+							<div class="card-body">
+								<h5 class="card-title">{{ actu.title}}</h5>
+								<p class="card-text">{{ actu.content}}</p>
+								{# <a href="#" class="btn btn-primary">GO actualités</a> #}
+								<a href="{{ path('actualites')}}" class="btn btn-primary">Go actualités</a>
+ 
+							</div>
+						</div>
+					</div>
+					{% set j=j+1 %}
+					{% endfor %}
+				</div>
+				<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleSlidesOnly"
+					data-bs-slide="prev">
 					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
 					<span class="visually-hidden">Previous</span>
 				</button>
 
-				<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide="next">
+				<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleSlidesOnly"
+					data-bs-slide="next">
 					<span class="carousel-control-next-icon" aria-hidden="true"></span>
 					<span class="visually-hidden">Next</span>
 				</button>
 			</div>
 		</div>
 	</div>
+</div>
 
 
 {% endblock %}
