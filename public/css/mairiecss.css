@@ -1,0 +1,11 @@
+.nomContact,
+.prenomContact,
+.telContact,
+.mailContact {
+    background-color: antiquewhite
+        /*Vert*/
+}
+
+.textareaContact {
+    background-color: bisque
+}

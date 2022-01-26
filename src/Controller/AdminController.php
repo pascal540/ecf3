@@ -99,7 +99,7 @@ class AdminController extends AbstractController
             );
         }
 
-        return $this->render('admin/modifieActualie.html.twig', [
+        return $this->render('admin/modifieActualite.html.twig', [
             'controller_name' => 'AdminController',
             'actualite' => $actualites,
             'formActue' => $formActue->createView()
@@ -157,7 +157,7 @@ class AdminController extends AbstractController
 
         $manager->flush();
 
-        $this->addFlash('info', 'Actualite supprimée avec succes');
+        // $this->addFlash('info', 'Actualite supprimée avec succes');
         return $this->redirectToRoute(
             'actualites',
         );

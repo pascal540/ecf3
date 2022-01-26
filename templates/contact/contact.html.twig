@@ -1,6 +1,7 @@
 {% extends 'base.html.twig' %}
 {% form_theme form 'bootstrap_5_layout.html.twig'  %}
 {% block body %}
+
 <style>
     .nomContact,
     .prenomContact,
@@ -14,7 +15,11 @@
         background-color: bisque
     }
 </style>
+{% block stylesheets %}
+
+{% endblock %}
 <div class="container w-75 mt-3  mb-5 bg-light">
+
     <div class="row custom-line-contact">
 
         <div class="row">

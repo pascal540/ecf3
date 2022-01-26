@@ -5,13 +5,13 @@
 {% block body %}
 
 {% form_theme formEvenement 'bootstrap_5_layout.html.twig'  %}
-<div class="container w-75 bg-light">
+<div class="container w-75 bg-light ">
 
-	<div class="container text-center col-6">
+	<div class="container text-center mt-5 col-6">
 		{{ form_start(formEvenement) }}
-		{{form_row(formEvenement.title,{'attr':{'placeholder':'Titre de l\'actualité'}})}}
-		{{form_row(formEvenement.content,{'attr':{'placeholder':'Contenu à entrer '}})}}
-		{{form_row(formEvenement.file,{'attr':{'placeholder':'image à Uploader'}})}}
+		{{form_row(formEvenement.title,{'label':'Titre de l\'évènement' })}}
+		{{form_row(formEvenement.content,{'label':'Contenu de l\'évènement' })}}
+		{{form_row(formEvenement.file,{'label':'Fichier image à charger' })}}
 
 		<button type="submit" class="btn btn-success">Modifier </button>
 		</button>

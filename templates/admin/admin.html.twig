@@ -10,9 +10,9 @@
 		<div class="container text-center col-6">
 			{{ form_start(formEvent) }}
 
-			{{form_row(formEvent.title,{'attr':{'placeholder':'Titre de l\'evenement'}})}}
-			{{form_row(formEvent.content,{'attr':{'placeholder':'Contenu à entrer '}})}}
-			{{form_row(formEvent.file,{'attr':{'placeholder':'image à Uploader'}})}}
+			{{form_row(formEvent.title,{'label':'Titre de l\'évènement','attr':{'placeholder':'Titre de l\'evenement'}})}}
+			{{form_row(formEvent.content,{'label':'Contenu de votre évènement','attr':{'placeholder':'Contenu de l\'évènement '}})}}
+			{{form_row(formEvent.file,{'label':'Fichier de l\'image à charger','attr':{'placeholder':'image à Uploader'}})}}
 
 			<button type="submit" class="btn btn-success">Ajouter</button>
 			</button>
@@ -21,9 +21,9 @@
 		</div>
 		<div class="container text-center col-6">
 			{{ form_start(formActue) }}
-			{{form_row(formActue.title,{'attr':{'placeholder':'Titre de l\'actualité'}})}}
-			{{form_row(formActue.content,{'attr':{'placeholder':'Contenu à entrer '}})}}
-			{{form_row(formActue.file,{'attr':{'placeholder':'image à Uploader'}})}}
+			{{form_row(formActue.title,{'label':'Titre de l\actualité','attr':{'placeholder':'Titre de l\'actualité'}})}}
+			{{form_row(formActue.content,{'label':'Contenu de votre actualité','attr':{'placeholder':'Contenu à entrer '}})}}
+			{{form_row(formActue.file,{'label':'Fichier de l\'image à charger','attr':{'placeholder':'image à Uploader'}})}}
 
 			<button type="submit" class="btn btn-success">Ajouter</button>
 			</button>

@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Administration
+{% endblock %}
+{% block body %}
+
+{% form_theme formActue 'bootstrap_5_layout.html.twig'  %}
+<div class="container w-75 bg-light">
+
+	<div class="container text-center mt-5 col-6">
+		{{ form_start(formActue) }}
+		{{form_row(formActue.title,{'label':'Titre de l\'actualité' })}}
+		{{form_row(formActue.content,{'label':'Contenu de l\'actualité' })}}
+		{{form_row(formActue.file,{'label':'Fichier image à charger' })}}
+
+		<button type="submit" class="btn btn-success">Modifier </button>
+		</button>
+
+		{{ form_end(formActue) }}
+	</div>
+</div>
+</div>{% endblock %}
