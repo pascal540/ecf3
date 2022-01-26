@@ -107,7 +107,6 @@ class AdminController extends AbstractController
         ]);
     }
 
-
     /**
      * @Route("/modificationEvent/{id}", name="event_modifie")
      */
